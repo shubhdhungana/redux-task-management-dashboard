@@ -1,5 +1,12 @@
-import "@/styles/globals.css";
+import "../styles/globals.css";
+import ReduxProvider from "../store/provider";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps }) {
+  return (
+    <ReduxProvider>
+      <Component {...pageProps} />
+    </ReduxProvider>
+  );
 }
+
+export default MyApp;
